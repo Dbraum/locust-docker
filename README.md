@@ -15,6 +15,7 @@ cd ../locust/locust_distribute
 # 最后
 cd ..
 docker-compose up
+
 //指定多少个slave
 docker-compose scale locust-master=1 locust-slave=4
 ```
