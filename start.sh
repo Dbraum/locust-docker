@@ -1,0 +1,1 @@
+locust -f ./locustfile.py --host=http://112.74.93.133:3001

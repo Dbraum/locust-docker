@@ -1,0 +1,27 @@
+version: '2'
+services:
+  locust-master:
+    image: locust_distribute
+    ports:
+      - "8089:8089"
+      - "5557:5557"
+      - "5558:5558"
+    environment:
+      SCENARIO_FILE: /home/locust/locustfile.py
+      LOCUST_MODE: master
+      TARGET_URL: http://112.74.93.133:3001
+    volumes:
+      - /Users/mac_cn/work/seckill/loadTest/:/home/locust/
+  locust-slave:
+    image: locust_distribute
+    links:
+      - locust-master
+    volumes:
+      - /Users/mac_cn/work/seckill/loadTest/:/home/locust/
+    environment:
+      SCENARIO_FILE: /home/locust/locustfile.py
+      LOCUST_MODE: slave
+      TARGET_URL: http://112.74.93.133:3001
+      MASTER_HOST: 172.16.1.181
+    
+      
