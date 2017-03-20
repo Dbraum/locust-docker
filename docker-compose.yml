@@ -11,13 +11,13 @@ services:
       LOCUST_MODE: master
       TARGET_URL: http://112.74.93.133:3001
     volumes:
-      - /Users/mac_cn/work/seckill/loadTest/:/home/locust/
+      - ./:/home/locust/
   locust-slave:
     image: locust_distribute
     links:
       - locust-master
     volumes:
-      - /Users/mac_cn/work/seckill/loadTest/:/home/locust/
+      - ./:/home/locust/
     environment:
       SCENARIO_FILE: /home/locust/locustfile.py
       LOCUST_MODE: slave
