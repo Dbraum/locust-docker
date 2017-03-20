@@ -22,6 +22,6 @@ services:
       SCENARIO_FILE: /home/locust/locustfile.py
       LOCUST_MODE: slave
       TARGET_URL: http://112.74.93.133:3001
-      MASTER_HOST: 172.16.1.181
+      MASTER_HOST: 112.74.114.59
     
       
