@@ -1,6 +1,6 @@
 #locust
 #标准的centos镜像
-FROM docker.io/centos
+FROM centos
 
 # install locust deps
 RUN yum install -y gcc
